@@ -20,8 +20,3 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
  }
-
- .clicked {
-  color: white;
-  background-color: black;
-}
