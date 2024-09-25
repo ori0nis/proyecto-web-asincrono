@@ -33,14 +33,18 @@ export const navbar = () =>
           </ul>
         </nav>`;
 
-        const selectButtons = document.querySelectorAll(".select-button");
+
+const selectButtons = document.querySelectorAll(".select-button");
 
 const clickEffect = () => {
     selectButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            button.classList.toggle("clicked");
-        });
-    });
-};
+      button.addEventListener("click", () => {
+          button.classList.toggle("clicked");
+      });
+  });
+}
+        
+clickEffect();
 
-    clickEffect()
+
+ 

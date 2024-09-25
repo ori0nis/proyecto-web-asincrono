@@ -34,15 +34,16 @@
     border-radius: 10px;
 }
 
-/* button::selection{
-    background-color: black;
-} */
-
 .button-logo {
     height: 3vh;
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
+}
+
+.select-button {
+  font-size: 0.9rem;
+  font-weight: 675;
 }
 
 #search {

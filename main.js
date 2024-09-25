@@ -1,10 +1,11 @@
 import './style.css'
 import { navbar } from "./components/nav/nav.js";
+import { fetchPhotos } from './data/data.js';
 
 const header = document.querySelector("header");
 header.innerHTML = navbar();
 
-
+fetchPhotos()
 
 
 
