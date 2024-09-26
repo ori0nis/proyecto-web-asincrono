@@ -5,12 +5,11 @@ const header = document.querySelector("header");
 header.innerHTML = navbar();
 
 const gallery = document.querySelector("#image-grid");
-
-//const searchForm = document.querySelector("#search-form");
-//const input = document.querySelector("#search");
+const searchForm = document.querySelector("#search-form");
+const input = document.querySelector("#search");
 
     export const fetchPhotos = async (userInput) => {
-        const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y';
+        const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y'
 
         try {
 
@@ -25,36 +24,24 @@ const gallery = document.querySelector("#image-grid");
                 const photoHTML = galleryGrid(photo);
                 gallery.insertAdjacentHTML('beforeend', photoHTML);
             });
+
          } catch (error) {
             console.error("Error fetching photos:", error);
         }
     };
 
-    fetchPhotos("trees")
-    inputEventListener()
-
-    /* searchForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const userInput = submit.value;
-        console.log(userInput);
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const userInput = input.value;
+    console.log(userInput);
         if (userInput) {
             fetchPhotos(userInput);
         } else {
             console.log("Please enter a search term.");
         }
-    }); */
-   /* 
-     input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            const userInput = submit.value;
-            console.log(userInput);
-            if (userInput) {
-                fetchPhotos(userInput);
-            } else {
-                console.log("Please enter a search term.");
-            }
-        }
-    });  */ 
+    });
+
+inputEventListener();
+
 
     

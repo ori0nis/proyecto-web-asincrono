@@ -14,7 +14,7 @@ export const navbar = () =>
             </li>  
             <li>
               <form id="search-form">
-                <input type="search" id="search" placeholder="Search..." />
+                <input type="text" id="search" placeholder="Search..." />
               </form>  
             </li>  
             <li>
@@ -41,8 +41,8 @@ export const inputEventListener = () => {
 
     if (input) {
       input.addEventListener("input", () => {
-          const userInput = input.value;
-          console.log(userInput);
+        const userInput = input.value;
+        console.log(userInput);
       });
     } else {
       console.error("Search input not found");
