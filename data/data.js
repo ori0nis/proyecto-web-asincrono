@@ -1,15 +1,13 @@
-import { navbar } from "../components/nav/nav.js"
+import { navbar, inputEventListener } from "../components/nav/nav.js"
 import { galleryGrid } from "../components/gallery/gallery.js";
-
 
 const header = document.querySelector("header");
 header.innerHTML = navbar();
 
 const gallery = document.querySelector("#image-grid");
 
-const searchForm = document.querySelector("#search-form");
-const submit = document.querySelector("#search");
-
+//const searchForm = document.querySelector("#search-form");
+//const input = document.querySelector("#search");
 
     export const fetchPhotos = async (userInput) => {
         const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y';
@@ -32,7 +30,10 @@ const submit = document.querySelector("#search");
         }
     };
 
-    searchForm.addEventListener("submit", (e) => {
+    fetchPhotos("trees")
+    inputEventListener()
+
+    /* searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const userInput = submit.value;
         console.log(userInput);
@@ -41,9 +42,9 @@ const submit = document.querySelector("#search");
         } else {
             console.log("Please enter a search term.");
         }
-    });
-   
-     submit.addEventListener("keydown", (e) => {
+    }); */
+   /* 
+     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
             const userInput = submit.value;
@@ -54,6 +55,6 @@ const submit = document.querySelector("#search");
                 console.log("Please enter a search term.");
             }
         }
-    });  
+    });  */ 
 
     

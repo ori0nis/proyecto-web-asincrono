@@ -35,8 +35,22 @@ export const navbar = () =>
           </ul>
         </nav>`;
 
+export const inputEventListener = () => {
+      
+  const input = document.querySelector("#search");
 
-const selectButtons = document.querySelectorAll(".select-button");
+    if (input) {
+      input.addEventListener("input", () => {
+          const userInput = input.value;
+          console.log(userInput);
+      });
+    } else {
+      console.error("Search input not found");
+    };
+}
+        
+
+/* const selectButtons = document.querySelectorAll(".select-button");
 
 const clickEffect = () => {
     selectButtons.forEach(button => {
@@ -46,7 +60,7 @@ const clickEffect = () => {
   });
 }
         
-clickEffect();
+clickEffect(); */
 
 
  
