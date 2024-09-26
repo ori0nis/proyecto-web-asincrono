@@ -1,6 +1,9 @@
-import '/gallery.css'
+import './gallery.css'
 
-const gallery = document.querySelector("#image-grid");
 
-gallery.innerHTML = ``
+export const galleryGrid = (photo) => `
+ <div class="photo">
+    <img src="${photo.urls.small}" alt="${photo.alt_description || 'Photo'}">
+  </div>
+`
 

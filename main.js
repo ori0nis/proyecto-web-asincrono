@@ -1,13 +1,12 @@
 import './style.css'
 import { navbar } from "./components/nav/nav.js";
 import { fetchPhotos } from './data/data.js';
+//import { galleryGrid } from './components/gallery/gallery.js'
 
 const header = document.querySelector("header");
 header.innerHTML = navbar();
 
 fetchPhotos()
-
-
 
 
 // https://unsplash.com/oauth/applications/657640
