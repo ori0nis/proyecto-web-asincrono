@@ -1,47 +1,57 @@
-import { navbar, inputEventListener } from "../components/nav/nav.js"
 import { galleryGrid } from "../components/gallery/gallery.js";
-
-const header = document.querySelector("header");
-header.innerHTML = navbar();
+import { modal } from "../components/modal/modal.js";
 
 const gallery = document.querySelector("#image-grid");
-const searchForm = document.querySelector("#search-form");
-const input = document.querySelector("#search");
 
-    export const fetchPhotos = async (userInput) => {
-        const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y'
+export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) => {
+    const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y'
 
-        try {
+    try {
 
-            const res = await fetch(`https://api.unsplash.com/search/photos?query=${userInput}&client_id=${accessKey}`);
-            const allPhotos = await res.json();
-            console.log(allPhotos);
-            const photosArray = allPhotos.results;
+        const res = await fetch(`https://api.unsplash.com/search/photos?query=${userInput}&page=${page}&per_page=${perPage}&client_id=${accessKey}`);
+        const allPhotos = await res.json();
+        console.log(allPhotos);
+        const photosArray = allPhotos.results;
 
-            gallery.innerHTML = '';
+        gallery.innerHTML = '';
 
             photosArray.forEach(photo => {
-                const photoHTML = galleryGrid(photo);
-                gallery.insertAdjacentHTML('beforeend', photoHTML);
+                gallery.innerHTML += galleryGrid(photo);
             });
 
-         } catch (error) {
-            console.error("Error fetching photos:", error);
-        }
-    };
+        if (photosArray.length === 0) {
+            gallery.innerHTML = modal();
+    
+            const suggestedButtons = document.querySelectorAll(".suggested-button");
+            suggestedButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const inputValue = button.textContent; 
+                    fetchPhotos(inputValue); 
+                });
+            });
+        }       
+    } catch (error) {
+        console.error("Error fetching photos:", error);
+    }
+};
 
-searchForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const userInput = input.value;
-    console.log(userInput);
-        if (userInput) {
-            fetchPhotos(userInput);
-        } else {
-            console.log("Please enter a search term.");
-        }
-    });
+export const renderPhotos = () => {
+    const searchForm = document.querySelector("#search-form");
+    const input = document.querySelector("#search");
 
-inputEventListener();
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const userInput = input.value;
+        console.log(userInput);
+            if (userInput) {
+                fetchPhotos(userInput);
+            } else {
+                console.log("No photos found.");
+            }
+        });
+    }
+ 
+  
 
 
     

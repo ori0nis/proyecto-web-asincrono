@@ -1,0 +1,15 @@
+#modal {
+    font-family: 'Roboto';
+    text-align: center;
+    margin: 0 auto;
+}
+
+#modal > button {
+    cursor: pointer;
+    padding-right: 10px;
+    border: 1px, dotted, crimson;
+    border-radius: 8px;
+    margin: 2em;
+    font-weight: 600;
+    background-color: rgba(220, 20, 60, 0.205);
+}

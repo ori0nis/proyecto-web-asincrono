@@ -1,14 +1,23 @@
 import './style.css'
 import { navbar } from "./components/nav/nav.js";
-import { fetchPhotos } from './data/data.js';
-//import { galleryGrid } from './components/gallery/gallery.js'
+import { fetchPhotos, renderPhotos } from './data/data.js';
 
 const header = document.querySelector("header");
 header.innerHTML = navbar();
 
 fetchPhotos()
+renderPhotos()
 
+/* const attachEventListeners = () => {
+    const homeButton = document.querySelector(".home");
+    if (homeButton) {
+        // Use a function reference for the click event
+        homeButton.addEventListener("click", () => fetchPhotos("cats"));
+    }
+};
 
-// https://unsplash.com/oauth/applications/657640
-// https://unsplash.com/documentation#search-photos
-// https://unsplash.com/documentation#get-a-random-photo
+// Call the function to attach event listeners
+attachEventListeners(); */
+
+const homeButton = document.querySelector(".home")
+homeButton.addEventListener("click", () => fetchPhotos("cats"));  
