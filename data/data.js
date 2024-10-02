@@ -21,26 +21,33 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
 
         gallery.innerHTML = '';
 
+        if (photosArray.length > 0) {
             photosArray.forEach(photo => {
                 gallery.innerHTML += galleryGrid(photo);
             });
 
-        if (photosArray.length === 0) {
+            footer.innerHTML = nextPage();
+        } else {            
             gallery.innerHTML = modal();
             footer.innerHTML = '';
-    
+        }
+
+        if (photosArray.length === 0) {
             const suggestedButtons = document.querySelectorAll(".suggested-button");
+
             suggestedButtons.forEach(button => {
                 button.addEventListener("click", () => {
                     const inputValue = button.textContent; 
-                    fetchPhotos(inputValue); 
+                    currentPage = 1;
+                    fetchPhotos(inputValue, currentPage);
+                    flipPage();
                 });
             });
-        }       
+        }  
     } catch (error) {
         console.error("Error fetching photos:", error);
     }
-};
+}; 
 
 export const renderPhotos = () => {
     const searchForm = document.querySelector("#search-form");
