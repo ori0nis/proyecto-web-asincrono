@@ -13,11 +13,6 @@ export const navbar = () =>
               <button type="button" class="select-button create">Crear</button>
             </li>  
             <li>
-              <button type="button" class="search-button">
-                <img src="./icons/search-icon.png" class="button-icon" alt="search icon">
-              </button>
-            </li>
-            <li>
               <form id="search-form">
                 <input type="text" id="search" placeholder="Search..." />
               </form>  

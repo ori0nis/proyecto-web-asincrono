@@ -62,24 +62,21 @@ button {
   background-color: rgba(128, 128, 128, 0.199);
   }
 
-.search-button {
-  display: none;
-}  
+/* Media queries */  
 
 @media (max-width: 770px) {
     
   #search {
     width: 50vw;
   }
-
- /*  .search-button {
-    display: block;
-  } */
-
 }
 
 @media (max-width: 400px) {
     
+  #navbar {
+    width: 50vw;
+  }
+
   .icons {
     display: none;
   }
@@ -89,11 +86,6 @@ button {
   }
 
   #search {
-    width: 10vw;
+    width: 48vw;
   }
-  
- /*  .search-button {
-    display: block;
-  }
-   */
 }

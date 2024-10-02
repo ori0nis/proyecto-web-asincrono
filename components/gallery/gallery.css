@@ -37,3 +37,16 @@
 .photo:hover .like-icon {
     display: block; 
 }
+
+/* Media queries */
+
+@media (max-width: 400px) {
+
+    #image-grid {
+        margin-right: -8em;
+    }
+
+    .photo {
+        width: 50vw;
+    }
+  }
