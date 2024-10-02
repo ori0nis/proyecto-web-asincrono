@@ -40,10 +40,10 @@
 
 /* Media queries */
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
 
     #image-grid {
-        margin-right: -8em;
+        margin: 0 auto;
     }
 
     .photo {
