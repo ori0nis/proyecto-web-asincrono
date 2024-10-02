@@ -21,31 +21,26 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
 
         gallery.innerHTML = '';
 
-        if (photosArray.length > 0) {
             photosArray.forEach(photo => {
                 gallery.innerHTML += galleryGrid(photo);
             });
 
-            footer.innerHTML = nextPage();
-        } else {            
+        if (photosArray.length === 0) {
             gallery.innerHTML = modal();
             footer.innerHTML = '';
-        }
-
-        //! Esta es la única cosa que no funciona por ahora
-
-        if (photosArray.length === 0) {
+    
             const suggestedButtons = document.querySelectorAll(".suggested-button");
-
             suggestedButtons.forEach(button => {
                 button.addEventListener("click", () => {
                     const inputValue = button.textContent; 
-                    currentPage = 1;
-                    fetchPhotos(inputValue, currentPage);
+                    fetchPhotos(inputValue, currentPage); 
+                    currentPage++
+                    footer.innerHTML = nextPage();
+                    fetchPhotos(inputValue, currentPage); 
                     flipPage();
                 });
             });
-        }  
+        }     
     } catch (error) {
         console.error("Error fetching photos:", error);
     }
