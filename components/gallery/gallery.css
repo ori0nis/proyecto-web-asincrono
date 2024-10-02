@@ -15,4 +15,25 @@
     justify-content: flex-start;
     align-items: center;
     height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.like-icon {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.like-icon > img {
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.photo:hover {
+    cursor: pointer;
+    opacity: 40%;
+}
+
+.photo:hover .like-icon {
+    display: block; 
 }
