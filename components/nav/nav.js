@@ -7,10 +7,10 @@ export const navbar = () =>
               <img src="./icons/pinterest-logo.png" class="logo" alt="pinterest logo">
             </li>
             <li>
-              <button type="button" class="select-button home">Inicio</button>
+              <button type="button" class="select-button home">Home</button>
             </li>
             <li>
-              <button type="button" class="select-button create">Crear</button>
+              <button type="button" class="select-button create">Create</button>
             </li>  
             <li>
               <form id="search-form">
