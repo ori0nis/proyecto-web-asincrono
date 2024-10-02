@@ -6,4 +6,5 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
   position: relative;
+  overflow-x: hidden;
  }
