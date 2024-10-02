@@ -1,0 +1,28 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+#next-page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer > #next-page > p {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 1.5em;
+    font-family: 'Roboto';
+    margin: 0 auto;
+}
+
+footer > #next-page > button > img {
+    width: 2rem;
+}

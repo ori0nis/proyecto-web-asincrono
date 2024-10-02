@@ -3,6 +3,9 @@ import { modal } from "../components/modal/modal.js";
 
 const gallery = document.querySelector("#image-grid");
 
+let currentPage = 1;
+let lastUserInput;
+
 export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) => {
     const accessKey = 'PExlSM_mtUUZj1H9nmIaD5tFsHTiRfJkEYR8EO8rr4Y'
 
@@ -41,15 +44,27 @@ export const renderPhotos = () => {
 
     searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const userInput = input.value;
-        console.log(userInput);
-            if (userInput) {
-                fetchPhotos(userInput);
+        lastUserInput = input.value;
+        console.log(lastUserInput);
+            if (lastUserInput) {
+                currentPage = 1;
+                fetchPhotos(lastUserInput, currentPage);
             } else {
                 console.log("No photos found.");
             }
         });
     }
+
+export const flipPage = () => {
+    const nextPageButton = document.querySelector(".next-page-button");
+    const nextPageText = document.querySelector(".next-page-text")
+    
+    nextPageButton.addEventListener("click", () => {
+        currentPage++;
+        nextPageText.textContent = "2/2"
+        fetchPhotos(lastUserInput, currentPage);
+    });
+};   
  
   
 
