@@ -40,7 +40,7 @@
 
 /* Media queries */
 
-@media (max-width: 375px) {
+@media (max-width: 420px) {
 
     #image-grid {
         margin-right: -8em;
