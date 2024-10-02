@@ -32,6 +32,8 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
             footer.innerHTML = '';
         }
 
+        //! Esta es la única cosa que no funciona por ahora
+
         if (photosArray.length === 0) {
             const suggestedButtons = document.querySelectorAll(".suggested-button");
 
