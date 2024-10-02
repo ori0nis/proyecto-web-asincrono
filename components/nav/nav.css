@@ -69,6 +69,10 @@ button {
   #search {
     width: 50vw;
   }
+
+  .icons {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
