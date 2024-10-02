@@ -1,7 +1,10 @@
 import { galleryGrid } from "../components/gallery/gallery.js";
 import { modal } from "../components/modal/modal.js";
+import { nextPage } from "../components/footer/footer.js";
 
 const gallery = document.querySelector("#image-grid");
+const footer = document.querySelector("footer");
+footer.innerHTML = nextPage();
 
 let currentPage = 1;
 let lastUserInput;
@@ -24,6 +27,7 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
 
         if (photosArray.length === 0) {
             gallery.innerHTML = modal();
+            footer.innerHTML = '';
     
             const suggestedButtons = document.querySelectorAll(".suggested-button");
             suggestedButtons.forEach(button => {
