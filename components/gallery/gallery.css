@@ -43,7 +43,8 @@
 @media (max-width: 400px) {
 
     #image-grid {
-        margin: 0 auto;
+        margin-right: -3em;
+      
     }
 
     .photo {
