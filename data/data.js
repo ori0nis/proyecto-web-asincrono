@@ -69,7 +69,7 @@ export const flipPage = () => {
     
     nextPageButton.addEventListener("click", () => {
         currentPage++;
-        nextPageText.textContent = "2/2"
+        nextPageText.textContent = currentPage;
         fetchPhotos(lastUserInput, currentPage);
     });
 };   
