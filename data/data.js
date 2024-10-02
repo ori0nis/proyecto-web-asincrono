@@ -25,6 +25,8 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
                 gallery.innerHTML += galleryGrid(photo);
             });
 
+        //! Esta es la única cosa que no funciona por ahora    
+
         if (photosArray.length === 0) {
             gallery.innerHTML = modal();
             footer.innerHTML = '';
@@ -34,9 +36,7 @@ export const fetchPhotos = async (userInput = "cats", page = 1, perPage = 24) =>
                 button.addEventListener("click", () => {
                     const inputValue = button.textContent; 
                     fetchPhotos(inputValue, currentPage); 
-                    currentPage++
                     footer.innerHTML = nextPage();
-                    fetchPhotos(inputValue, currentPage); 
                     flipPage();
                 });
             });
