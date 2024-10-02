@@ -7,13 +7,13 @@ export const navbar = () =>
               <img src="./icons/pinterest-logo.png" class="logo" alt="pinterest logo">
             </li>
             <li>
-              <button type="button" class="select-button home" value="#">Inicio</button>
+              <button type="button" class="select-button home">Inicio</button>
             </li>
             <li>
-              <button type="button" class="select-button" value="#">Crear</button>
+              <button type="button" class="select-button create">Crear</button>
             </li>  
             <li>
-              <button type="button" class="search-button" value="#">
+              <button type="button" class="search-button">
                 <img src="./icons/search-icon.png" class="button-icon" alt="search icon">
               </button>
             </li>
@@ -24,17 +24,17 @@ export const navbar = () =>
             </li>  
               <div class="icons">
                 <li>
-                  <button type="button" value="#">
+                  <button type="button">
                     <img src="./icons/notification-icon.png" class="button-icon" alt="notification icon">
                   </button>
                 </li> 
                 <li>
-                  <button type="button" value="#">
+                  <button type="button">
                     <img src="./icons/dm-icon.png" class="button-icon" alt="direct messages icon">
                   </button>
                 </li>  
                 <li>
-                  <button type="button" value="#">
+                  <button type="button">
                     <img src="./icons/profile-icon.png" class="button-icon" alt="profile icon">
                   </button>
                 </li>  

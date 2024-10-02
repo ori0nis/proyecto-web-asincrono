@@ -69,11 +69,31 @@ button {
 @media (max-width: 770px) {
     
   #search {
+    width: 50vw;
+  }
+
+ /*  .search-button {
+    display: block;
+  } */
+
+}
+
+@media (max-width: 400px) {
+    
+  .icons {
     display: none;
   }
 
-  .search-button {
-    display: block;
+  .create {
+    display: none;
   }
 
+  #search {
+    width: 10vw;
   }
+  
+ /*  .search-button {
+    display: block;
+  }
+   */
+}
