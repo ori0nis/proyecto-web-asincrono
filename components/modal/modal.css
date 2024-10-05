@@ -1,7 +1,9 @@
 #modal {
     font-family: 'Roboto';
     text-align: center;
-    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 #modal > button {

@@ -1,5 +1,6 @@
 #image-grid {
     width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     justify-content: center;
@@ -38,12 +39,3 @@
 .photo:hover .like-icon {
     display: block; 
 }
-
-/* Media queries */
-
-/* @media (max-width: 400px) {
-
-    .photo {
-        width: 100%;
-    }
-  } */
