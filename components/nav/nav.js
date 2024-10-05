@@ -12,7 +12,7 @@ export const navbar = () =>
             <li>
               <button type="button" class="select-button create">Create</button>
             </li>  
-            <li>
+            <li class="search-container">
               <form id="search-form">
                 <input type="text" id="search" placeholder="Search..." />
               </form>  
