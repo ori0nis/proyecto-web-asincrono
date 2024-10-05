@@ -84,7 +84,7 @@ button {
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 401px) {
     
   #navbar {
     width: 100%;
